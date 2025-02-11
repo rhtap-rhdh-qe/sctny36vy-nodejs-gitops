@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sctny36vy-nodejs-gitops
+  description: This is GitOps manifest for sctny36vy-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=sctny36vy-nodejs
+    backstage.io/kubernetes-id: sctny36vy-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: sctny36vy-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:sctny36vy-nodejs
